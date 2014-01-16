@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:t="http://java.sun.com/jsf/html">
+<f:view>
+    <h:form>
+    <table align="center">
+        <tr>
+            <th><h:outputText value="Computer wins! :) Thanks for your game!"/></th>
+            <th>
+                <t:outputFormat value="Your number was: {0}">
+                    <f:param value="#{numberBean.currentNumber}"/>
+                </t:outputFormat>
+            </th>
+        </tr>
+        <tr>
+            <td align="center" colspan="2">
+                <h:commandButton value="Play again" action="#{numberBean.playagain}"/>
+            </td>
+        </tr>
+    </table>
+    </h:form>
+</f:view>
+</html>

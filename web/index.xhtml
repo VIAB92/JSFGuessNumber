@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <f:view>
+       <p>
+           <h:messages style="color: blue"/>
+       </p>
+       <h:form>
+      <table align="center">
+          <tr>
+              <th colspan="2"><h:outputText value="Please, input minimum and maximum values (>0)"/> </th>
+          </tr>
+          <tr>
+              <td colspan="2" align="center">
+                  <h:outputText value="Your number must be less than maximum value"/>
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <h:outputText value="Minimum value:"/>
+              </td>
+              <td align="center">
+                  <h:inputText value="#{numberBean.minValue}">
+                       <f:validateLongRange minimum="0"/>
+                  </h:inputText>
+              </td>
+          </tr>
+          <tr>
+              <td align="center">
+                  <h:outputText value="Maximum value:"/>
+              </td>
+              <td align="center">
+                  <h:inputText value="#{numberBean.maxValue}">
+                      <f:validateLongRange minimum="1"/>
+                  </h:inputText>
+              </td>
+          </tr>
+          <tr>
+              <td align="center" colspan="2">
+                  <h:commandButton value="Go!" action="#{numberBean.setValues}"/>
+              </td>
+          </tr>
+
+      </table>
+       </h:form>
+   </f:view>
+</html>
